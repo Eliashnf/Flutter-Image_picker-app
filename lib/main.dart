@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'main_page.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Permission.microphone.request();
   runApp(MyApp());
 }
 
@@ -14,6 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MainPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

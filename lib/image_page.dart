@@ -421,6 +421,7 @@ class _ImagePageState extends State<ImagePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('AI Course'),
+        backgroundColor: Colors.deepPurple,
         actions: <Widget>[
           PopupMenuButton<String>(
             onSelected: onSelect,
@@ -452,13 +453,37 @@ class _ImagePageState extends State<ImagePage> {
           )
         ],
       ),
-      body: Stack(
-        children: stackChildren,
+      body: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 16.0),
+            child: Text(
+              "Selectionnez l'image dans votre galery",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(
+            child: Stack(
+              children: stackChildren,
+            ),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _getImage,
-        tooltip: 'Pick Image',
-        child: const Icon(Icons.image),
+      floatingActionButton: Center(
+        child: SizedBox(
+          width: 80,
+          height: 80,
+          child: FloatingActionButton(
+            onPressed: _getImage,
+            tooltip: 'Pick Image',
+            backgroundColor: Colors.deepPurple,
+            child: const Icon(
+              Icons.image,
+              size: 55,
+            ),
+          ),
+        ),
       ),
     );
   }

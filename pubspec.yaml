@@ -43,6 +43,9 @@ dependencies:
   #Adding voice to flutter project
   speech_to_text: ^6.1.1
 
+  #Permission depedencie
+  permission_handler: ^10.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
